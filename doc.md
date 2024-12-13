@@ -49,3 +49,17 @@
    - Cela génère une URL temporaire où vous pouvez voir et tester vos modifications.
 
 ---
+
+## 3. Synchroniser vos modifications avec Shopify
+
+1. **Pousser les modifications sur Shopify**
+
+   - Une fois vos modifications prêtes, utilisez cette commande pour les mettre à jour sur la boutique en ligne :
+     ```bash
+     shopify theme push
+     ```
+
+2. **Travailler sur un environnement de test (optionnel)**
+   - Pour éviter d’affecter directement le site en production, créez une copie du thème dans Shopify et poussez vos modifications sur cette copie. Cela permet de tester vos changements avant publication.
+
+---

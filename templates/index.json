@@ -1,0 +1,143 @@
+{
+  "sections": {
+    "2476ad6e-5940-4f06-9f02-0e30710301b6": {
+      "type": "home",
+      "blocks": {
+        "0c30cb2f-8407-487a-a680-fa3e0c2c1178": {
+          "type": "image",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/IMG_7575.jpg"
+          }
+        },
+        "4de0a150-d9f1-468e-addb-42e509c038d7": {
+          "type": "image",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/IMG_1204.jpg"
+          }
+        },
+        "10819a2d-2462-4873-bb68-3229c1ed2541": {
+          "type": "image",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/IMG_6690.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "0c30cb2f-8407-487a-a680-fa3e0c2c1178",
+        "4de0a150-d9f1-468e-addb-42e509c038d7",
+        "10819a2d-2462-4873-bb68-3229c1ed2541"
+      ],
+      "settings": {
+        "titre": "Scentalya",
+        "paragraphe": "Le plaisir d'allumer une bougie parfumée entre amis ou en famille pour une touche de convivialité, ou l'intimité d'une flamme romantique en tête à tête... Chaque fois le plaisir du geste est renouvelé, la surprise d'une découverte olfactive suscitée.",
+        "label_button": "Découvrez nos produits",
+        "link_button": "shopify:\/\/collections",
+        "text_color": "#121212"
+      }
+    },
+    "ce99bb62-69b8-43f7-bca4-6a66f0b6a81b": {
+      "type": "home-collections",
+      "settings": {
+        "titreProducts": "notre collection de bougies"
+      }
+    },
+    "bfb453b3-e6c8-4a13-930a-d7d505245b11": {
+      "type": "home-testimonial",
+      "blocks": {
+        "bb4d6f52-46b4-4a49-aead-23cc9530c279": {
+          "type": "text",
+          "settings": {
+            "textTestimonial": "Toujours très bien que ce soit la livraison ou la marchandise (j'adore), ou service client réponse rapide.",
+            "nameTestimonial": "Alexandre.B"
+          }
+        }
+      },
+      "block_order": [
+        "bb4d6f52-46b4-4a49-aead-23cc9530c279"
+      ],
+      "settings": {
+        "titreTestimonial": "vos avis"
+      }
+    },
+    "9cd61e31-7b6e-48ff-949a-6cbe59093de4": {
+      "type": "home-making",
+      "settings": {
+        "titreMaking": "fabriqué avec passion pour vous",
+        "makingImage": "shopify:\/\/shop_images\/makingPicture.jpg",
+        "label_button": "Découvrez notre univers",
+        "link_button": "shopify:\/\/pages\/a-propos"
+      }
+    },
+    "98444a68-022d-47db-af07-0bbf25a36067": {
+      "type": "home-marketing",
+      "settings": {
+        "titre-un": "Vegan",
+        "paragraphe-un": "Toute notre collection est végane.",
+        "titre-deux": "Naturel",
+        "paragraphe-deux": "Nous n'utilisons que les meilleurs ingrédients naturels.",
+        "titre-trois": "Recyclable",
+        "paragraphe-trois": "Tous nos emballages sont recyclables et respectueux de l'environnement.",
+        "titre-quatre": "Réutilisable",
+        "paragraphe-quatre": "Tous nos contenants sont réutilisables"
+      }
+    },
+    "d4648ea5-44c3-4060-b552-f642d11ae748": {
+      "type": "home-faq",
+      "blocks": {
+        "656bc248-7d4b-4822-a82a-c1ac0a27eb00": {
+          "type": "text",
+          "settings": {
+            "textQuestion": "Comment sont fabriquées nos bougies et fondants ?",
+            "textReponse": "Toutes nos bougies et fondants sont fabriqués à la main dans un petit atelier de la région parisienne. Nous tenons particulièrement à la qualité de nos produits, nous n'utilisons donc que des produits naturels et éco-responsables."
+          }
+        },
+        "5583c87e-d9ff-44fb-bf17-621635aa7cfe": {
+          "type": "text",
+          "settings": {
+            "textQuestion": "Quelles matières premières utilisons nous pour la fabrication des bougies et fondants?",
+            "textReponse": "Nous utilisons un subtil mélange de cire de soja et de cire de coco pour la fabrication de nos bougies. Pour nos fondants, ils sont fabriqués à base de cire de Colza. Tous nos parfums viennent de Grasse (France) et sont sans CMR, sans Phtalate, Cruelty Free et Vegan Friendly."
+          }
+        },
+        "e31d17a7-2688-4c23-966d-5506417abad4": {
+          "type": "text",
+          "settings": {
+            "textQuestion": "En combien de temps vais-je recevoir ma commande ?",
+            "textReponse": "Votre colis sera expédié dans les 48h suivant la commande."
+          }
+        },
+        "63bbcfe0-0334-4f98-bfc5-b67c9619e2d0": {
+          "type": "text",
+          "settings": {
+            "textQuestion": "Comment entretenir ma bougie ?",
+            "textReponse": "Lors de la première utilisation de votre bougie, il vout faudra la laisser allumée pendant 1h minimum afin que la chaleur se diffuse uniformément sur la cire. Au moment d'éteindre votre bougie, ne soufflez pas dessus ! Cela risquerait d'abimer la mèche. Utilisez le couvercle fourni si le produit en contient un, et refermer simplement la bougie. Si vous n'avez pas de couvercle, utilisez un éteignoir à bougie. Au prochain allumage, couper légèrement la mèche pour un allumage optimale de la bougie."
+          }
+        },
+        "1e4bf7e1-07c0-4ebc-acb9-5e4652535733": {
+          "type": "text",
+          "settings": {
+            "textQuestion": "Comment nettoyer mon brûle-parfum ?",
+            "textReponse": "Une fois le fondant fondu dans votre brûle-parfum, sachez que vous pouvez le réutiliser jusqu'à 5 fois. Si vous souhaitez changer de fondant, il vous suffit d'éteindre la bougie chauffe-plat, d'attendre que le fondant durcisse complètement, puis de rallumer quelques secondes la bougie. Le galet de cire se décollera alors tout seul."
+          }
+        }
+      },
+      "block_order": [
+        "656bc248-7d4b-4822-a82a-c1ac0a27eb00",
+        "5583c87e-d9ff-44fb-bf17-621635aa7cfe",
+        "e31d17a7-2688-4c23-966d-5506417abad4",
+        "63bbcfe0-0334-4f98-bfc5-b67c9619e2d0",
+        "1e4bf7e1-07c0-4ebc-acb9-5e4652535733"
+      ],
+      "settings": {
+        "titreFaq": "foire aux questions"
+      }
+    }
+  },
+  "order": [
+    "2476ad6e-5940-4f06-9f02-0e30710301b6",
+    "ce99bb62-69b8-43f7-bca4-6a66f0b6a81b",
+    "bfb453b3-e6c8-4a13-930a-d7d505245b11",
+    "9cd61e31-7b6e-48ff-949a-6cbe59093de4",
+    "98444a68-022d-47db-af07-0bbf25a36067",
+    "d4648ea5-44c3-4060-b552-f642d11ae748"
+  ]
+}

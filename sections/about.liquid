@@ -1,0 +1,96 @@
+<div id="container-about">
+  <div id="about-wrapper">
+    <div class="leftBox">
+      <h1>{{ section.settings.title_about_us }}</h1>
+      <p>{{ section.settings.page.content | newline_to_br | replace: '<strong>', '<strong class="custom-strong">' }}</p>
+    </div>
+    <div class="rightBox">
+      <img
+        src="{{ section.settings.right_box_image | img_url: '' }}"
+        alt="Image de la rightBox"
+        width=""
+        height=""
+        loading="lazy">
+    </div>
+  </div>
+</div>
+
+{% style %}
+  #container-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1920px;
+    margin: auto;
+    padding: 20px 0 80px;
+    font-family: "Exo", sans-serif;
+  }
+
+  #container-about #about-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 95%;
+  }
+
+  #container-about #about-wrapper h1 {
+    margin-bottom: 40px;
+    font-size: 40px;
+    text-transform: lowercase;
+  }
+
+  #container-about #about-wrapper .leftBox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+    width: 50%;
+  }
+
+  #container-about #about-wrapper .rightBox {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    width: 40%;
+  }
+
+  #container-about .rightBox img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 5px;
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "About Us",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title_about_us",
+        "label": "Titre de la section À propos",
+        "default": "À propos de nous"
+      }, {
+        "type": "page",
+        "id": "page",
+        "label": "Contenu de la page",
+        "info": "Le contenu de la page à afficher dans la section À propos."
+      }, {
+        "type": "image_picker",
+        "id": "right_box_image",
+        "label": "Image a propos",
+        "info": "Sélectionnez une image pour a propos."
+      }
+    ],
+    "presets": [
+      {
+        "name": "À propos",
+        "category": "Contenu"
+      }
+    ]
+  }
+{% endschema %}

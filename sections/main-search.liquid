@@ -1,0 +1,77 @@
+{%- liquid
+  assign sort_by = search.sort_by | default: search.default_sort_by
+  assign terms = search.terms | escape
+  assign search_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+-%}
+
+<div id="container-search-result">
+  <div id="content-search">
+    <h1 id="title-search-result">résultat pour {{ search.terms | escape }}</h1>
+    <form
+      action="{{ routes.search_url }}"
+      method="get"
+      role="search"
+      class="search"
+      id="search-form">
+      <input
+        class="bg-white"
+        id="Search-In-Template"
+        type="search"
+        name="q"
+        value="{{ search.terms | escape }}"
+        placeholder="{{ 'general.search.search' | t }}">
+      <input
+        type="hidden"
+        name="type"
+        value="product" />
+      <button
+        type="submit"
+        class="btn bg-black bg-black-hover"
+        aria-label="{{ 'general.search.search' | t }}">
+        Rechercher
+      </button>
+    </form>
+
+
+    {% if search.results_count > 0 %}
+
+      <div class="list-parent">
+        <div class="list-flex">
+          {% for item in search.results %}
+            <div class="product-item">
+              <a class="url-item" href="{{ item.url | within: collection }}">
+                <figure class="img-container">
+                  {% for image in item.images %}
+                    <img
+                      class="img-item"
+                      src="{{ image.src | img_url: 'large' }}"
+                      alt="{{ image.alt | escape }}"
+                      width="{{ image.width }}"
+                      height="{{ image.height }}"
+                      loading="lazy">
+                  {% endfor %}
+                </figure>
+              </a>
+              <div class="info-item">
+                <a class="title-item text-black" href="{{ item.url | within: collection }}">{{ item.title }}
+                </a>
+                <p class="price-item text-black">{{ item.price | money }}</p>
+                {% unless item.available %}
+                  <strong class="text-white">En rupture</strong>
+                {% endunless %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% else %}
+      <span style="min-height:360px;">aucun résultat pour cette recherche.
+        <a href="/" class="text-brun">retournez à la page d'accueil.</a>
+      </span>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+  {"name": "t:sections.main-search.name"}
+{% endschema %}

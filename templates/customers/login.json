@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-login",
+      "settings": {
+        "titreLogin": "Connectez-vous",
+        "paraLogin": "Vous pouvez dès à présent vous connecter à votre compte pour accéder à vos commandes, vos adresses et vos informations personnelles.",
+        "loginImage": "shopify:\/\/shop_images\/IMG_6844.jpg"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

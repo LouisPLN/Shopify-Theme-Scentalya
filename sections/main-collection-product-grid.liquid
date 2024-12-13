@@ -1,0 +1,54 @@
+<div id="container-collections-template">
+  <div id="content-collections-template">
+    <h1 id="title-collections-template">{{ collection.title }}</h1>
+    {%- if collection.description != blank -%}
+      <p id="para-collections-template">
+        <span>{{ collection.description | escape }}</span>
+      </p>
+    {%- endif -%}
+    {% if collection.all_products_count == 0 %}
+      <span style="min-height:360px;">Il n'existe aucun produit dans cette collection.
+        <a href="/" class="text-brun">Retournez à la page d'accueil.</a>
+      </span>
+    {% else %}
+      <div class="list-parent">
+        <div class="list-flex">
+          {% for product in collection.products %}
+            <div class="product-item">
+              <a
+                class="url-item"
+                href="{{ product.url | within: collection }}"
+                title="voir le produit">
+                <figure class="img-container">
+                  {% for image in product.images %}
+                    <img
+                      class="img-item"
+                      src="{{ image.src | img_url: 'large' }}"
+                      alt="{{ image.alt | escape }}"
+                      width="{{ image.width }}"
+                      height="{{ image.height }}"
+                      loading="lazy">
+                  {% endfor %}
+                </figure>
+              </a>
+              <div class="info-item">
+                <a class="title-item text-black" href="{{ product.url | within: collection }}">{{ product.title }}
+                </a>
+                <p class="price-item text-black">{{ product.price | money }}</p>
+                {% unless product.available %}
+                  <strong class="text-white">En rupture</strong>
+                {% endunless %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Par produit"
+  }
+{% endschema %}

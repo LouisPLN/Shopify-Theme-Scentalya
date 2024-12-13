@@ -1,0 +1,224 @@
+#container-collections {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  width: 100%;
+  max-width: 1920px;
+
+  padding: 20px 0;
+
+  margin: auto;
+
+  font-family: "Exo", sans-serif;
+}
+
+#content-collections {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 95%;
+}
+
+#content-collections #title-collections {
+  width: 100%;
+
+  margin-bottom: 40px;
+
+  font-size: 40px;
+  text-transform: lowercase;
+  text-align: left;
+}
+
+#content-collections .list-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+#content-collections .list-flex {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(50px, auto);
+  grid-gap: 20px;
+  line-break: strict;
+
+  width: 100%;
+}
+
+#content-collections .list-flex .title-collection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  font-size: 36px;
+  text-transform: lowercase;
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+#content-collections .list-flex .description-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+#content-collections .list-flex .description-collection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 60%;
+
+  font-size: 16px;
+  text-align: center;
+}
+
+#content-collections .product-item {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+#content-collections .product-item .url-item {
+  width: 100%;
+}
+
+#content-collections .product-item .img-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 5px;
+}
+
+#content-collections .product-item .img-item {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.product-item .img-container .img-item:not(:first-child) {
+  position: absolute;
+
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.product-item .img-container:hover .img-item:not(:first-child) {
+  opacity: 1;
+}
+
+#content-collections .product-item .info-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  width: 100%;
+  padding: 20px 0;
+}
+
+#content-collections .product-item .title-item {
+  font-size: 14px;
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+#content-collections .product-item .price-item {
+  font-size: 16px;
+  text-transform: lowercase;
+}
+
+#content-collections .product-item strong {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 80px;
+  height: 25px;
+
+  border-radius: 20px;
+  background: #606060;
+  font-size: 10px;
+}
+
+#content-collections .more-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100px;
+  width: 100%;
+
+  margin-bottom: 20px;
+
+  text-transform: lowercase;
+  grid-column-start: 1;
+  grid-column-end: -1;
+
+  border-bottom: 1px solid #a16c41;
+}
+
+#content-collections .more-items:hover {
+  text-decoration: underline;
+}
+
+#content-collections .more-items:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1350px) {
+  #content-collections .list-flex {
+    grid-template-columns: repeat(3, 2fr);
+  }
+}
+
+@media (max-width: 1150px) {
+  #content-collections .list-flex {
+    grid-template-columns: repeat(2, 2fr);
+  }
+}
+
+@media (max-width: 700px) {
+  #content-collections .list-flex {
+    grid-template-columns: repeat(1, 4fr);
+  }
+}
+
+@media (max-width: 500px) {
+  #content-collections #title-collections {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  #content-collections .list-flex .title-collection {
+    font-size: 24px;
+  }
+  #content-collections .list-flex .description-collection {
+    width: 100%;
+  }
+}

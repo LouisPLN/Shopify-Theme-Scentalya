@@ -1,0 +1,53 @@
+<section id="container-home-testimonial">
+  <div id="contain">
+    <h2 class="text-black">{{ section.settings.titreTestimonial }}</h2>
+    <div id="testimonial-parent">
+      {% for block in section.blocks %}
+        <div class="testi-content">
+          <p class="text-black">" {{ block.settings.textTestimonial }} "</p>
+          <small class="text-black">- {{ block.settings.nameTestimonial }}</small>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Home Testimonial",
+    "settings": [
+      {
+        "type": "text",
+        "id": "titreTestimonial",
+        "label": "Second titre",
+        "default": "vos avis"
+      }
+    ],
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Home Testimonial",
+        "settings": [
+          {
+            "type": "text",
+            "id": "textTestimonial",
+            "label": "Avis de la personne",
+            "default": "Un avis ..."
+          }, {
+            "type": "text",
+            "id": "nameTestimonial",
+            "label": "Nom de la personne",
+            "default": "Alexandre.B"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonial",
+        "category": "Home"
+      }
+    ]
+  }
+{% endschema %}

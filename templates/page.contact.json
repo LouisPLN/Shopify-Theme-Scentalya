@@ -1,0 +1,59 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {}
+    },
+    "21ad1d7d-e562-40ee-bbf2-0c9e15ec16c1": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16705206288618__21ad1d7d-e562-40ee-bbf2-0c9e15ec16c1-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Vous organisez un évènement et avez besoin de jolis cadeaux personnalisés pour vos invités ? <\/p><p><a href=\"\/blogs\/inspirations\/illuminez-vos-evenements-personnalisation-de-bougies-parfumees-pour-des-cadeaux-memorables\" title=\"Illuminez vos événements\">C'est par ici !<\/a><\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "6a7a9d75-a570-44fe-9fac-2a45e42d7453": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Vous êtes membre d'un comité d'entreprise et souhaitez découvrir nos offres ?<\/p><p><strong> <\/strong><a href=\"\/blogs\/inspirations\/bougies-personnalisees-pour-les-comites-dentreprise\" title=\"Bougies Personnalisées pour les Comités d'Entreprise\"><strong>C'est par là !<\/strong><\/a><\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "template--16705206288618__21ad1d7d-e562-40ee-bbf2-0c9e15ec16c1-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Nous sommes là pour vous! <\/p><p>Laissez nous un message et nous vous recontacterons pour vous accompagner dans la personnalisation de votre évènement.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16705206288618__21ad1d7d-e562-40ee-bbf2-0c9e15ec16c1-heading-1",
+        "6a7a9d75-a570-44fe-9fac-2a45e42d7453",
+        "template--16705206288618__21ad1d7d-e562-40ee-bbf2-0c9e15ec16c1-text-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "form",
+    "21ad1d7d-e562-40ee-bbf2-0c9e15ec16c1"
+  ]
+}

@@ -1,0 +1,64 @@
+<section id="container-home-faq">
+  <div id="contain">
+    <h2 id="faqTitle" class="text-black">{{ section.settings.titreFaq }}</h2>
+    <div id="faq-parent">
+      {% for block in section.blocks %}
+        <div class="faq-content">
+          <div class="question" onclick="faq(this)">
+            <h6 class="text-black">
+              {{ block.settings.textQuestion }}
+            </h6>
+            <span class="see-answer bg-pastel-hard bg-pastel-medium-hover text-white bg-">+</span>
+          </div>
+          <div class="reponse bg-pastel-medium">
+            <p class="text-black">
+              {{ block.settings.textReponse }}</p>
+          </div>
+
+
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+
+  {
+    "name": "Home FAQ",
+    "settings": [
+      {
+        "type": "text",
+        "id": "titreFaq",
+        "label": "Second titre",
+        "default": "foire aux questions"
+      }
+    ],
+    "max_blocks": 10,
+    "blocks": [
+      {
+        "type": "text",
+        "name": "FAQ",
+        "settings": [
+          {
+            "type": "text",
+            "id": "textQuestion",
+            "label": "Question",
+            "default": "Une question ?"
+          }, {
+            "type": "text",
+            "id": "textReponse",
+            "label": "Réponse",
+            "default": "Une réponse."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Home FAQ",
+        "category": "Home"
+      }
+    ]
+  }
+{% endschema %}

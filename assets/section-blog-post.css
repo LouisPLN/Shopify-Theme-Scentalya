@@ -1,0 +1,132 @@
+#container-article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1920px;
+  margin: auto;
+  padding: 20px 0 80px;
+  font-family: "Exo", sans-serif;
+}
+
+#container-article #article-wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  width: 60%;
+}
+
+#container-article #article-wrapper article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#container-article img {
+  border-radius: 5px;
+  width: 100%;
+  height: auto;
+}
+
+#container-article #article-wrapper #hero-banner {
+  position: relative;
+  width: 100%;
+}
+
+#container-article #article-wrapper .article-banner {
+  width: 100%;
+  min-width: 700px;
+  height: 300px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+#container-article #article-wrapper .article-infos {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px 20px;
+
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+#container-article #article-wrapper h1 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+#container-article #article-wrapper h2 {
+  margin: 20px 0 40px 0;
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+}
+
+#container-article #article-wrapper .content {
+  width: 60%;
+}
+
+#container-article #article-wrapper ul {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+#container-article #article-wrapper .article-tag:hover {
+  text-decoration: underline;
+}
+
+#container-article #article-wrapper .article-back {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 16px;
+  text-transform: lowercase;
+  text-decoration: underline;
+}
+
+#container-article #article-wrapper .article-back img {
+  height: 20px;
+  width: 20px;
+  transform: rotate(-90deg);
+}
+
+@media (max-width: 1350px) {
+  #container-article #article-wrapper {
+    width: 75%;
+  }
+}
+
+@media (max-width: 1150px) {
+  #container-article #article-wrapper {
+    width: 95%;
+  }
+}
+
+@media (max-width: 700px) {
+  #container-article #article-wrapper .content {
+    width: 100%;
+  }
+  #container-article #article-wrapper .article-banner {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 500px) {
+}

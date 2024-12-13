@@ -1,0 +1,43 @@
+{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+
+<div id="container-blog">
+  <div id="blog-wrapper">
+    <h1 class="">{{ blog.title | escape }}</h1>
+    {%- paginate blog.articles by 20 -%}
+      <div class="list-parent">
+        <div class="list-flex">
+          {%- for article in blog.articles -%}
+            <div class="blog-articles">
+              <a
+                class="article-url text-black"
+                href="{{ article.url }}"
+                title="lire l'article">
+                <img
+                  class="article-img"
+                  src="{{ article.image.src | img_url: 'large' }}"
+                  alt="{{ image.alt | escape }}"
+                  width=""
+                  height=""
+                  loading="lazy" />
+                <h3 class="article-title text-black">{{ article.title }}</h3>
+                <div class="article-desc text-black">{{ article.excerpt | truncate: 170, "..." }}</div>
+                <strong class="text-white bg-brun-medium">{{ article.created_at | date: "%d %b %Y" }}</strong>
+                <p class="article-see text-brun text-brun-hover">lire la suite
+                  <img
+                    src="{{ 'arrow.svg' | asset_url }}"
+                    loading="lazy"
+                    alt=""
+                    width=""
+                    height="" />
+                </p>
+              </a>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+      {%- if paginate.pages > 1 -%}
+        {%- render 'pagination', paginate: paginate -%}
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</div>

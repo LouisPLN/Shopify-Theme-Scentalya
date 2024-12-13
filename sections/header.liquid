@@ -1,0 +1,273 @@
+<span style="display: flex; justify-content: center; align-items: center; width: 100%;">
+  <header
+    class="header bg-brun-light"
+    id="header"
+  >
+    <div class="navigation-container">
+      <nav class="header-navbar" id="header-navbar">
+        <ul class="nav-link">
+          <a href="/"
+            ><img
+              id="logo"
+              src="{{ 'scentalya.svg' | asset_url }}"
+              alt="{{ shop.name }}"
+              width="none"
+              height="none"
+              loading="lazy"
+          ></a>
+          {% for link in linklists['main-menu'].links %}
+            <li class="menu-link">
+              <a
+                href="{{ link.url }}"
+                class="text-black text-brun-hover"
+              >
+                {{- link.title }}
+                {% if link.links.size > 0 %}
+                  <div id="arrow">
+                    <img
+                      src="{{ 'arrow.svg' | asset_url }}"
+                      loading="lazy"
+                      alt=""
+                      width=""
+                      height=""
+                    >
+                  </div>
+                {% endif %}
+              </a>
+              {% if link.links.size > 0 %}
+                <ul class="menu-dropdown">
+                  {% for child_link in link.links %}
+                    <li>
+                      <a href="{{ child_link.url }}" class="text-white text-brun-hover">{{ child_link.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      <div class="header-utils">
+        <ul class="nav-infos">
+          {% for link in linklists['second-menu'].links %}
+            <li class="menu-link">
+              <a href="{{ link.url }}" class="text-black text-brun-hover">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+          <form
+            id="searchForm"
+            action="/search"
+            class="search-bar"
+            role="search"
+          >
+            <div class="input-box">
+              <input
+                type="text"
+                class="search-input"
+                name="q"
+                value="{{ search.terms | escape }}"
+                placeholder="Recherche"
+                id="searchInput"
+              >
+              <input type="hidden" name="type" value="product" />
+              <span class="icon icon-hover not-search">
+                <img
+                  src="{{ 'search.svg' | asset_url }}"
+                  class="search-icon"
+                  loading="lazy"
+                  alt=""
+                  width=""
+                  height=""
+                  title="Rechercher"
+                >
+                <span id="delete-this"></span>
+              </span>
+              <img
+                src="{{ 'close.svg' | asset_url }}"
+                class="close-icon"
+                loading="lazy"
+                alt=""
+                width=""
+                height=""
+                style="cursor: pointer;"
+              >
+            </div>
+          </form>
+          {%- if customer -%}
+            <a id="login" class="icon icon-hover">
+              <q id="status" class="bg-green"></q>
+              <img
+                src="{{ 'profile.svg' | asset_url }}"
+                loading="lazy"
+                alt=""
+                width=""
+                height=""
+                title="Profile"
+              >
+              <span></span>
+            </a>
+            <ul class="login-dropdown">
+              <div id="parent">
+                <a href="/account" id="login-sublink-one" class=" text-white text-brun-hover">Mon compte</a>
+                <a href="/account/logout" id="login-sublink-two" class="text-white text-brun-hover">Me déconnecter</a>
+              </div>
+            </ul>
+          {%- else -%}
+            <a class="icon icon-hover" href="/account/login">
+              <img
+                src="{{ 'profile.svg' | asset_url }}"
+                loading="lazy"
+                alt=""
+                width=""
+                height=""
+                title="Se connecter / S'inscrire"
+              >
+              <span></span>
+            </a>
+          {%- endif -%}
+          <a class="icon icon-hover" href="/cart">
+            <img
+              src="{{ 'panier.svg' | asset_url }}"
+              loading="lazy"
+              alt=""
+              width=""
+              height=""
+              title="Panier"
+            >
+            {% if cart.item_count > 0 %}
+              <span class="cart-count">{{ cart.item_count }}</span>
+            {% endif %}
+            <span></span>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </header>
+</span>
+
+<header id="header-phone" class="header-phone bg-brun-light">
+  <div id="header-container">
+    <div id="toggle-menu-phone">
+      <img
+        src="{{ 'burger.svg' | asset_url }}"
+        alt=""
+        width="none"
+        height="none"
+        loading="lazy"
+        style="cursor: pointer;"
+      >
+    </div>
+    <a href="/"
+      ><img
+        id="logo"
+        src="{{ 'scentalya.svg' | asset_url }}"
+        alt="{{ shop.name }}"
+        width="50"
+        height="50"
+        loading="lazy"
+    ></a>
+    <div id="phone-cart">
+      <a class="icon-hover" href="/cart">
+        <img
+          src="{{ 'panier.svg' | asset_url }}"
+          loading="lazy"
+          alt=""
+          width=""
+          height=""
+        >
+        {% if cart.item_count > 0 %}
+          <span class="cart-count">{{ cart.item_count }}</span>
+        {% endif %}
+        <span></span>
+      </a>
+    </div>
+  </div>
+  <div id="navigation-container-phone">
+    <div id="bg-overlay"></div>
+    <nav id="nav-phone">
+      <div id="header-nav">
+        <img
+          src="{{ 'close.svg' | asset_url }}"
+          class="cross-icon bg-pastel-light"
+          loading="lazy"
+          alt=""
+          width=""
+          height=""
+          style="cursor: pointer;"
+        >
+        <form
+          id="searchForm"
+          action="/search"
+          class="search-bar"
+          role="search"
+        >
+          <button type="submit">
+            <img
+              src="{{ 'search.svg' | asset_url }}"
+              loading="lazy"
+              alt=""
+              width=""
+              height=""
+            >
+          </button>
+          <input
+            type="text"
+            name="q"
+            value="{{ search.terms | escape }}"
+            placeholder="Recherche"
+            id="search-input-phone"
+          >
+          <input type="hidden" name="type" value="product" />
+        </form>
+      </div>
+      <ul id="phone-link">
+        {% for link in linklists['phone-menu'].links %}
+          <li class="menu-link">
+            <a
+              href="{{ link.url }}"
+              class="text-white text-brun-hover"
+            >
+              {{- link.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      <div id="sub-link">
+        {%- if customer -%}
+        <a class="text-white text-brun-hover" href="/account/">Mon compte</a>
+        <span class="text-white">&nbsp;/&nbsp;</span>
+        <a class="text-white text-brun-hover" href="/account/logout">Me déconnecter</a>
+        {%- else -%}
+        <a class="text-white text-brun-hover" href="/account/register">S'inscrire</a>
+        <span class="text-white">&nbsp;/&nbsp;</span>
+        <a class="text-white text-brun-hover" href="/account/login">Se connecter</a>
+      {%- endif -%}
+      </div>
+    </nav>
+  </div>
+</header>
+
+{% javascript %}
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "logo"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Header"
+    },
+    "fr": {
+      "title": "En-tête"
+    }
+  }
+}
+{% endschema %}

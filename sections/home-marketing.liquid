@@ -1,0 +1,106 @@
+<div id="container-marketing">
+  <div id="content-marketing">
+    <div class="marketing">
+      <img
+          src="{{ 'lapin.png' | asset_url }}"
+          loading="lazy"
+          alt=""
+          width=""
+          height=""
+        >
+        <h2>{{ section.settings.titre-un }}</h2>
+        <p>{{ section.settings.paragraphe-un }}</p>
+    </div>
+    <div class="marketing">
+      <img
+          src="{{ 'natural.svg' | asset_url }}"
+          loading="lazy"
+          alt=""
+          width=""
+          height=""
+        >
+        <h2>{{ section.settings.titre-deux }}</h2>
+        <p>{{ section.settings.paragraphe-deux }}</p>
+    </div>
+    <div class="marketing">
+      <img
+          src="{{ 'recycler.png' | asset_url }}"
+          loading="lazy"
+          alt=""
+          width=""
+          height=""
+        >
+        <h2>{{ section.settings.titre-trois }}</h2>
+        <p>{{ section.settings.paragraphe-trois }}</p>
+    </div>
+    <div class="marketing">
+      <img
+          src="{{ 'eco.png' | asset_url }}"
+          loading="lazy"
+          alt=""
+          width=""
+          height=""
+        >
+        <h2>{{ section.settings.titre-quatre }}</h2>
+        <p>{{ section.settings.paragraphe-quatre }}</p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Home Marketing",
+    "settings": [
+      {
+        "type": "text",
+        "id": "titre-un",
+        "label": "Premier titre",
+        "default": "Végane"
+      }, {
+        "type": "text",
+        "id": "paragraphe-un",
+        "label": "Premier paragraphe",
+        "default": "Toute notre collection est végane."
+      },
+      {
+        "type": "text",
+        "id": "titre-deux",
+        "label": "Deuxième titre",
+        "default": "Naturel"
+      }, {
+        "type": "text",
+        "id": "paragraphe-deux",
+        "label": "Deuxième paragraphe",
+        "default": "Nous n'utilisons que les meilleurs ingrédients naturels."
+      },
+      {
+        "type": "text",
+        "id": "titre-trois",
+        "label": "Troisième titre",
+        "default": "Recyclable"
+      }, {
+        "type": "text",
+        "id": "paragraphe-trois",
+        "label": "Troisième paragraphe",
+        "default": "Tous les emballages sont recyclables et respectueux de l'environnement."
+      },
+      {
+        "type": "text",
+        "id": "titre-quatre",
+        "label": "Quatrième titre",
+        "default": "Réutilisable"
+      }, {
+        "type": "text",
+        "id": "paragraphe-quatre",
+        "label": "Quatrième paragraphe",
+        "default": "Vous pouvez réutiliser les contenants pour ranger vos bijoux."
+      }
+    ],
+    "presets": [
+      {
+        "name": "Home Marketing",
+        "category": "Home"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "fc3c9dc8-9380-40a4-b42a-ca483db5668b": {
+      "type": "about",
+      "settings": {
+        "title_about_us": "À propos de nous",
+        "page": "a-propos",
+        "right_box_image": "shopify:\/\/shop_images\/Capture_d_ecran_2024-01-17_a_14.33.25.png"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 8,
+        "padding_bottom": 12
+      }
+    }
+  },
+  "order": [
+    "fc3c9dc8-9380-40a4-b42a-ca483db5668b",
+    "main"
+  ]
+}

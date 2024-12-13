@@ -1,0 +1,68 @@
+<div id="container-collections">
+  <div id="content-collections">
+    <h1 id="title-collections">{{ section.settings.titre }}</h1>
+    <div class="list-parent">
+      <div class="list-flex">
+        {% for collection in collections %}
+          {% if collection.all_types contains 'Bougies' %}
+            {% unless collection.handle == 'frontpage' %}
+              {% assign collection_title = collection.title | escape %}
+              <h3 class="title-collection text-black">
+                {{ collection_title }}
+              </h3>
+              <div class="description-container">
+                <p class="description-collection text-black">
+                  {{ collection.description }}
+                </p>
+              </div>
+              {% for product in collection.products limit: 4 %}
+                {% assign grid_item_width = 'large--one-fifth medium--one-half' %}
+                <div class="product-item">
+                  <a class="url-item" href="{{ product.url | within: collection }}" title="voir le produit">
+                    <figure class="img-container">
+                      {% for image in product.images %}
+                        <img
+                          class="img-item"
+                          src="{{ image.src | img_url: 'large' }}"
+                          alt="{{ image.alt | escape }}"
+                          width="{{ image.width }}"
+                          height="{{ image.height }}"
+                          loading="lazy">
+                      {% endfor %}
+                    </figure>
+                  </a>
+                  <div class="info-item">
+                    <a class="title-item text-black" href="{{ product.url | within: collection }}">{{ product.title }}
+                    </a>
+                    <p class="price-item text-black">{{ product.price | money }}</p>
+                    {% unless product.available %}
+                      <strong class="text-white">En rupture</strong>
+                    {% endunless %}
+                  </div>
+                </div>
+              {% endfor %}
+              <a class="more-items text-brun" href="{{ collection.url }}">Voir plus
+                {{ collection_title }}
+                &rsaquo;
+              </a>
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Tous les produits",
+    "settings": [
+      {
+        "type": "text",
+        "id": "titre",
+        "label": "Titre de la page",
+        "default": "toutes nos bougies"
+      }
+    ]
+  }
+{% endschema %}

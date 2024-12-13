@@ -1,0 +1,118 @@
+<footer class="bg-pastel-hard" id="footer">
+  <div id="footer-content">
+    {% for block in section.blocks %}
+      <div class="footer-item">
+        {% case block.type %}
+          {% when 'link_list' %}
+          <h6 class="text-black">{{ block.settings.titreFooterNav }}</h6>
+          <ul class="footer-links">
+            {% assign footer_linkList = block.settings.menu %}
+            {% for link in linklists[footer_linkList].links limit: 4 %}
+              <li class="link-item">
+                <a class="text-black" href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+          {% comment %} {% when 'newsletter' %}
+          <h6 class="text-black">{{ block.settings.titleFooterNewsletter }}</h6>
+          {% form 'customer' %}
+          <input
+          name="contact[tags]"
+          type="hidden"
+          value="newsletter">
+          <input
+          id="Email"
+          name="contact[email]"
+          placeholder="email"
+          type="email">
+          <button class="btn bg-brun-medium bg-pastel-medium-hover text-black" type="submit">S'inscrire</button>
+          {% endform %} {% endcomment %}
+        {% else %}
+          <h6 class="text-black">{{ block.settings.titleFooterText }}</h6>
+          <div class="icon-media">
+            <a href="{{ section.settings.linkIcon1 }}">
+              <img
+                class="img-banner"
+                src="{{ block.settings.iconFooterMedia1 | img_url: '' }}"
+                alt="{{ block.settings.iconFooterMedia1.alt }}"
+                width="none"
+                height="none"
+                loading="lazy">
+            </a>
+            <a href="{{ section.settings.linkIcon2 }}">
+              <img
+                class="img-banner"
+                src="{{ block.settings.iconFooterMedia2 | img_url: '' }}"
+                alt="{{ block.settings.iconFooterMedia2.alt }}"
+                width="none"
+                height="none"
+                loading="lazy">
+            </a>
+          </div>
+        {% endcase %}
+      </div>
+    {% endfor %}
+  </div>
+  {% assign current_year = 'now' | date: "%Y" %}
+  <div class="text-grey" id="footer-copyright">Copyright &copy; {{ current_year }}, Scentalya</div>
+  <div class="text-grey" id="footer-credit">Designed and Developed with 🤎 by
+    <a href="https://github.com/LouisPLN">
+      Louis</a>
+  </div>
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "link_list",
+        "name": "menu",
+        "settings": [
+          {
+            "type": "text",
+            "id": "titreFooterNav",
+            "label": "Titre de la section pied de page",
+            "default": "plan du site"
+          }, {
+            "type": "link_list",
+            "id": "menu",
+            "label": "menu",
+            "default": "footer"
+          }
+        ]
+      }, {
+        "type": "text",
+        "name": "réseaux sociaux",
+        "settings": [
+          {
+            "type": "text",
+            "id": "titleFooterText",
+            "label": "Titre de la section pied de page",
+            "default": "réseaux sociaux"
+          },
+          {
+            "type": "image_picker",
+            "id": "iconFooterMedia1",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "iconFooterMedia2",
+            "label": "Image"
+          },
+          {
+            "type": "url",
+            "id": "linkIcon1",
+            "label": "Lien du facebook"
+          }, {
+            "type": "url",
+            "id": "linkIcon2",
+            "label": "Lien du instagram"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

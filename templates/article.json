@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "settings": {
+        "blog_show_author": false,
+        "blog_show_date": true
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

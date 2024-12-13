@@ -1,0 +1,50 @@
+<section id="container-home-products">
+  <div id="products-parent">
+    <h2 class="text-black">{{ section.settings.titreProducts }}</h2>
+    <div id="carousel-products">
+      {% for collection in collections %}
+        {% if collection.all_types contains 'Bougies' %}
+          <div class="slide overflow">
+            <img
+              src="{{ collection.image | img_url: 'master' }}"
+              alt="{{ collection.title }}"
+              width="none"
+              height="none"
+              loading="lazy">
+            <a href="{{ collection.url }}" class="collection-info">
+              <h3 class="text-black">
+                {{- collection.title }}
+              </h3>
+              <img
+                src="{{ 'arrow.svg' | asset_url }}"
+                loading="lazy"
+                alt=""
+                width=""
+                height="">
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Home Products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "titreProducts",
+        "label": "Second titre",
+        "default": "nos bougies"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Home Products",
+        "category": "Home"
+      }
+    ]
+  }
+{% endschema %}

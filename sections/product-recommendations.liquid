@@ -1,0 +1,65 @@
+{{ 'section-product-recommendations.css' | asset_url | stylesheet_tag }}
+
+<div id="container-recommendations">
+  <div id="reco-wrapper">
+    <product-recommendations class="product-recommendations page-width section-{{ section.id }}-padding isolate" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}">
+      {% if recommendations.performed and recommendations.products_count > 0 %}
+        <h2 id="title-reco">{{ section.settings.heading | escape }}</h2>
+        <div class="list-parent">
+          <div class="list-flex">
+            {% for recommendation in recommendations.products %}
+              <div class="product-item">
+                <a
+                  class="url-item"
+                  href="{{ recommendation.url | within: collection }}"
+                  title="voir le produit">
+                  <figure class="img-container">
+                    <img
+                      class="img-item"
+                      src="{{ recommendation.featured_image | img_url: 'large' }}"
+                      alt="{{ recommendation.title | escape }}"
+                      width="{{ recommendation.featured_image.width }}"
+                      height="{{ recommendation.featured_image.height }}"
+                      loading="lazy">
+                  </figure>
+                </a>
+                <div class="info-item">
+                  <a class="title-item text-black" href="{{ recommendation.url | within: collection }}">{{ recommendation.title | escape }}
+                  </a>
+                  <p class="price-item text-black">{{ recommendation.price | money }}</p>
+                  {% unless recommendation.available %}
+                    <strong class="text-white">En rupture</strong>
+                  {% endunless %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </product-recommendations>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "t:sections.product-recommendations.name",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "default": "Vous aimerez aussi",
+        "label": "t:sections.product-recommendations.settings.heading.label"
+      }, {
+        "type": "range",
+        "id": "products_to_show",
+        "min": 2,
+        "max": 4,
+        "step": 1,
+        "default": 4,
+        "label": "t:sections.product-recommendations.settings.products_to_show.label"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,134 @@
+#container-login {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  width: 100%;
+  max-width: 1920px;
+
+  padding: 20px 0;
+
+  margin: auto;
+
+  font-family: "Exo", sans-serif;
+}
+
+#container-login #parent-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 95%;
+}
+
+#container-login #parent-login #leftBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 60%;
+}
+
+#parent-login #leftBox h1 {
+  width: 100%;
+
+  margin-bottom: 20px;
+
+  font-size: 40px;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+#parent-login #leftBox .para {
+  width: 60%;
+  margin-bottom: 50px;
+
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+#parent-login #customer_login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+#parent-login #leftBox label {
+  width: 100%;
+  text-align: left;
+}
+
+#parent-login #leftBox input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 50px;
+  width: 350px;
+
+  padding: 0 20px;
+  margin-bottom: 20px;
+
+  font-family: "Exo", sans-serif;
+  font-size: 12px;
+  text-transform: lowercase;
+  border-radius: 50px;
+  border: 1px solid #d0b7a1;
+  transition: all, 0.1s;
+}
+
+#parent-login #leftBox .forgotPassword {
+  position: absolute;
+  right: 0;
+  top: 80px;
+
+  font-size: 12px;
+}
+
+#parent-login #leftBox button {
+  margin: auto;
+  width: 200px;
+}
+
+#container-login #parent-login #rightBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 40%;
+}
+
+#container-login #parent-login #rightBox img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 5px;
+}
+
+@media (max-width: 1280px) {
+  #container-login #parent-login #leftBox {
+    width: 100%;
+  }
+
+  #container-login #parent-login #rightBox {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  #parent-login #leftBox .para {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #parent-login #leftBox input {
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+  }
+}

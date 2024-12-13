@@ -1,0 +1,62 @@
+#container-marketing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  max-width: 1920px;
+
+  padding: 60px 0 0 0;
+
+  margin: auto;
+
+  font-family: "Exo", sans-serif;
+}
+
+#container-marketing #content-marketing {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 95%;
+}
+
+#container-marketing #content-marketing .marketing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 16%;
+}
+
+#container-marketing #content-marketing .marketing img {
+  height: 50px;
+  aspect-ratio: 1/1;
+  margin-bottom: 20px;
+}
+
+#container-marketing #content-marketing .marketing h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: medium;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+#container-marketing #content-marketing .marketing p {
+  font-size: 14px;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+@media screen and (max-width: 820px) {
+  #container-marketing #content-marketing {
+    flex-direction: column;
+  }
+
+  #container-marketing #content-marketing .marketing {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

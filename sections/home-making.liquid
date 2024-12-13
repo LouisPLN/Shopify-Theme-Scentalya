@@ -1,0 +1,45 @@
+<section id="container-home-making">
+    <img
+      src="{{ section.settings.makingImage | img_url: 'master' }}"
+      alt="Img making of"
+      loading="lazy"
+      width=""
+      height="" />
+      <h2 class="text-white">{{ section.settings.titreMaking }}</h2>
+      <a class="btn bg-brun-medium bg-pastel-medium-hover text-black" href="{{ section.settings.link_button }}">
+        {{ section.settings.label_button }}
+      </a>
+</section>
+
+{% schema %}
+  {
+    "name": "Home Making",
+    "settings": [
+      {
+        "type": "text",
+        "id": "titreMaking",
+        "label": "Second titre",
+        "default": "fabriqué avec passion pour vous, pour chez vous"
+      }, {
+        "type": "image_picker",
+        "id": "makingImage",
+        "label": "Photo préparation"
+      }, {
+        "type": "text",
+        "id": "label_button",
+        "default": "Découvrez notre univers",
+        "label": "Texte du bouton"
+      }, {
+        "type": "url",
+        "id": "link_button",
+        "label": "Lien du bouton"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Home Making",
+        "category": "Home"
+      }
+    ]
+  }
+{% endschema %}

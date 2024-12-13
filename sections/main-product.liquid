@@ -1,0 +1,108 @@
+<div id="container-product">
+  <div id="product-wrapper">
+    {% comment %} <h2 class="text-black">{{ product.title }}</h2> {% endcomment %}
+    <div id="contain">
+      <div id="leftBox">
+        <div class="product-gallery">
+          <div class="thumbnail-images">
+            {% for image in product.images %}
+              {% assign is_first_thumbnail = forloop.first %}
+              <img
+                src="{{ image.src | img_url: '' }}"
+                alt="{{ image.alt }}"
+                class="thumbnail {% if is_first_thumbnail %}selected-thumbnail{% endif %}"
+                data-src="{{ image.src | img_url: '' }}"
+                loading="lazy"
+                width=""
+                height="" />
+            {% endfor %}
+          </div>
+          <div class="main-image">
+            <img
+              src="{{ product.featured_image.src | img_url: '' }}"
+              alt="{{ product.featured_image.alt }}"
+              id="main-image"
+              loading="lazy"
+              width=""
+              height="" />
+          </div>
+        </div>
+      </div>
+      <div id="rightBox">
+        <div class="product">
+          <h1>{{ product.title }}</h1>
+          <span class="separator"></span>
+          <p>{{ product.description }}</p>
+          <span class="separator"></span>
+          <form method="post" action="/cart/add">
+            <select
+              name="id"
+              id="variant-selector"
+              style="visibility: hidden; position: absolute;">
+              {% for variant in product.variants %}
+                <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+              {% endfor %}
+            </select>
+            <div id="cart-quantity">
+              <div class="quantity-selector">
+                <label>Quantité</label>
+                <div style="display: flex; align-items: center; margin-top: 5px;">
+                  <button type="button" class="quantity-button bg-pastel-hard bg-pastel-medium-hover text-white" onclick="updateQuantity(-1)">-</button>
+                  <input type="text" id="quantity-input" name="quantity" readonly value="1" min="1" max="99" pattern="[0-9]*" />
+                  <button type="button" class="quantity-button bg-pastel-hard bg-pastel-medium-hover text-white" onclick="updateQuantity(1)">+</button>
+                </div>
+              </div>
+              <div>
+                <label>Prix</label>
+                <h3>{{ product.price | money }}</h3>
+              </div>
+            </div>
+              <button
+                type="submit"
+                class="btn bg-brun-medium bg-pastel-medium-hover"
+                {% unless product.available %}
+                disabled="disabled"
+                {% endunless %}>
+                {%- if product.available -%}
+                  ajouter au panier
+                {%- else -%}
+                  en rupture
+                {%- endif -%}
+              </button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+  document.addEventListener("DOMContentLoaded", function() {
+  var mainImage = document.getElementById("main-image");
+  var thumbnails = document.querySelectorAll(".thumbnail");
+
+  thumbnails.forEach(function(thumbnail) {
+    thumbnail.addEventListener("click", function() {
+      thumbnails.forEach(function(t) {
+        t.classList.remove("selected-thumbnail");
+      });
+      this.classList.add("selected-thumbnail");
+      mainImage.src = this.getAttribute("data-src");
+    });
+  });
+});
+{% endjavascript %}
+
+{% schema %}
+  {
+    "name": "Product",
+    "settings": [],
+    "blocks": [],
+    "presets": [
+      {
+        "name": "Product",
+        "category": "Product"
+      }
+    ]
+  }
+{% endschema %}

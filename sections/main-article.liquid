@@ -1,0 +1,78 @@
+{{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+
+<div id="container-article">
+  <div id="article-wrapper">
+    <article>
+      <header>
+        <div id="hero-banner">
+          <img
+            class="article-banner"
+            src="{{ article.image | img_url: 'large' }}"
+            alt="{{ article.title }}"
+            height=""
+            width=""
+            loading="lazy">
+          <div class="article-infos bg-brun-medium text-white">
+            {%- if section.settings.blog_show_author -%}
+              <span>
+                par {{ article.author }}
+              </span>
+            {%- endif -%}
+            {%- if section.settings.blog_show_date -%}
+              <span>&nbsp;le {{ article.created_at | date: '%d %b %Y' }}
+              </span>
+            {%- endif -%}
+          </div>
+        </div>
+        <span class="separator"></span>
+        <h1>{{ article.title }}</h1>
+        <h2>{{ article.excerpt }}</h2>
+      </header>
+      <section class="content">
+        {{ article.content | newline_to_br | replace: '<strong>', '<strong class="custom-strong">' }}
+      </section>
+      {%- if article.tags.size > 0 -%}
+        <footer>
+          <ul aria-label="Tags">
+            {%- for tag in article.tags -%}
+              <li>
+                <a class="article-tag text-grey" href="{{ blog.url }}/tagged/{{ tag | handle }}">
+                  #{{ tag }}
+                </a>
+              </li>
+              &nbsp;&nbsp;
+            {%- endfor -%}
+          </ul>
+        </footer>
+      {%- endif -%}
+      <a class="article-back text-brun text-brun-hover" href="/blogs/inspirations">
+        <img
+          src="{{ 'arrow.svg' | asset_url }}"
+          loading="lazy"
+          alt=""
+          width=""
+          height="" />
+        &nbsp;retour à la page inspirations
+      </a>
+    </article>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Posts",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "blog_show_author",
+        "label": "Show author",
+        "default": true
+      }, {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

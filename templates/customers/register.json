@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-register",
+      "settings": {
+        "titreRegister": "Inscrivez-vous",
+        "paraRegister": "Vous pouvez dès à présent vous créer un compte pour accéder à vos commandes, vos adresses et vos informations personnelles.",
+        "loginImage": "shopify:\/\/shop_images\/pexels-elina-fairytale-3865794_2.jpg"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

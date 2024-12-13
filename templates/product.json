@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {}
+    },
+    "4503ca68-b066-4191-bdef-986676ab75fa": {
+      "type": "home-faq",
+      "blocks": {
+        "30942906-c56c-4bbc-80f8-75ebdc9873b6": {
+          "type": "text",
+          "settings": {
+            "textQuestion": "Composition",
+            "textReponse": "Nos bougies et fondants parfumés sont composés de 90% de cires naturelles de soja et coco, et de 10% de parfum de Grasse. Les parfums que nous utilisons sont sans CMR, sans Phtalate, Cruelty Free et Vegan Friendly. Fabriqués par nos petites mains en Ile de France."
+          }
+        },
+        "f430b682-e7e3-44dc-8c10-52eb085b6b2d": {
+          "type": "text",
+          "settings": {
+            "textQuestion": "Utilisation de nos bougies parfumées",
+            "textReponse": "Afin de profiter au maximum du parfum délicat de nos bougies suivez ces étapes simples. Avant d'allumer la bougie, coupez légèrement la mèche. Elle doit mesurer entre 0,5 et 1 cm. Allumez la bougie, et laissez la cire fondre de manière uniforme pour éviter la formation de trous. Laissez la bruler environ 1 à 2 heures pour que le parfum se diffuse efficacement. Eteignez-la en utilisant un éteignoir pour minimiser la fumée. Répétez ces étapes à chaque utilisation pour expérience olfactive optimale."
+          }
+        },
+        "text_GR3wkD": {
+          "type": "text",
+          "settings": {
+            "textQuestion": "Utilisation de nos fondants parfumés",
+            "textReponse": "Les fondants parfumés offrent une alternative sans flamme pour parfumer votre espace. Pour une expérience olfactive optimale, placez le fondant dans un brûleur spécialement conçu. Assurez-vous que la pièce est bien ventilée. Allumez une bougie chauffe-plat sous le brûleur, permettant au fondant de fondre lentement. A mesure que la cire fond, elle libère son parfum subtil. N'oubliez pas de surveiller la bougie chauffe-plat et de l'éteindre lorsque le fondant à complètement fondu. Changez le fondant selon votre humeur ou la saison pour une variété d'arômes envoûtants."
+          }
+        },
+        "text_eTadTm": {
+          "type": "text",
+          "settings": {
+            "textQuestion": "Expédition \/ Livraison",
+            "textReponse": "Nous comprenons que votre temps est précieux, c'est pourquoi nous nous engageons à traiter et expédier vos commandes sous 24-48h."
+          }
+        }
+      },
+      "block_order": [
+        "30942906-c56c-4bbc-80f8-75ebdc9873b6",
+        "f430b682-e7e3-44dc-8c10-52eb085b6b2d",
+        "text_GR3wkD",
+        "text_eTadTm"
+      ],
+      "settings": {
+        "titreFaq": "Informations"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "Vous aimerez aussi",
+        "products_to_show": 4
+      }
+    }
+  },
+  "order": [
+    "main",
+    "4503ca68-b066-4191-bdef-986676ab75fa",
+    "product-recommendations"
+  ]
+}

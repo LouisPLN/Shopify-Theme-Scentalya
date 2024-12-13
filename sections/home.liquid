@@ -1,0 +1,109 @@
+<section id="container-home">
+  <div id="hero-banner">
+    <div class="splide slideshow" id="bg-banner">
+      <div class="splide__arrows splide__arrows--ltr">
+        <button
+          class="splide__arrow splide__arrow--prev"
+          type="button"
+          aria-label="Previous slide"
+          aria-controls="splide01-track"><img
+            src="{{ 'arrow.svg' | asset_url }}"
+            loading="lazy"
+            alt=""
+            width=""
+            height=""
+            style="transform: rotate(-90deg);"></button>
+        <button
+          class="splide__arrow splide__arrow--next"
+          type="button"
+          aria-label="Next slide"
+          aria-controls="splide01-track"><img
+            src="{{ 'arrow.svg' | asset_url }}"
+            loading="lazy"
+            alt=""
+            width=""
+            height=""
+            style="transform: rotate(90deg);"></button>
+      </div>
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for block in section.blocks %}
+            <li class="splide__slide">
+              <img
+                class="img-banner"
+                src="{{ block.settings.slide | img_url: '1980x1080' }}"
+                alt="{{ block.settings.slide.alt }}"
+                width="none"
+                height="none"
+                loading="lazy">
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div id="banner-content">
+      <h1 id="appearOne" style="color: {{ section.settings.text_color }};">{{ section.settings.titre }}</h1>
+      <p id="appearTwo" style="color: {{ section.settings.text_color }};">{{ section.settings.paragraphe }}</p>
+      <span id="appearThree">
+        <a class="btn bg-brun-light bg-pastel-medium-hover text-brun" href="{{ section.settings.link_button }}">{{ section.settings.label_button }}</a>
+      </span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Home",
+    "tag": "div",
+    "limit": 1,
+    "settings": [
+      {
+        "type": "text",
+        "id": "titre",
+        "label": "Grand titre",
+        "default": "Scentalya"
+      },
+      {
+        "type": "text",
+        "id": "paragraphe",
+        "label": "Premier paragraphe",
+        "default": "Paragraphe"
+      },
+      {
+        "type": "text",
+        "id": "label_button",
+        "default": "Découvrez nos bougies",
+        "label": "Texte du bouton"
+      },
+      {
+        "type": "url",
+        "id": "link_button",
+        "label": "Lien du bouton"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Couleur du texte",
+        "default": "#000000"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "slide",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Home",
+        "category": "Home"
+      }
+    ]
+  }
+{% endschema %}

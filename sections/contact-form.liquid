@@ -1,0 +1,50 @@
+<div id="container-contact">
+  <div id="content-contact">
+    <h1 id="title-contact">{{ page.title }}</h1>
+    <p id="message-contact">{{ page.content }}</p>
+
+    {% form 'contact' %}
+      {% if form.posted_successfully? %}
+        Message bien envoyé nous vous répondrons dans les plus brefs délais.
+      {% endif %}
+      {{ form.errors | default_errors }}
+      <label for="ContactFormName">Nom
+        <span class="text-red">*</span>
+      </label>
+      <input
+        type="text"
+        id="ContactFormName"
+        name="contact[name]"
+        placeholder="votre joli nom">
+      <label for="ContactFormEmail">Email
+        <span class="text-red">*</span>
+      </label>
+      <input
+        type="email"
+        id="ContactFormEmail"
+        name="contact[email]"
+        placeholder="votre email">
+      <label for="ContactFormSociete">Société</label>
+      <input
+        type="tel"
+        id="ContactFormSociete"
+        name="contact[societe]"
+        placeholder="la société">
+      <label for="ContactFormPhone">Téléphone</label>
+      <input
+        type="tel"
+        id="ContactFormPhone"
+        name="contact[phone]"
+        placeholder="votre 06...">
+      <label for="ContactFormMessage">Message
+        <span class="text-red">*</span>
+      </label>
+      <textarea
+        rows="10"
+        id="ContactFormMessage"
+        name="contact[body]"
+        placeholder="un beau message"></textarea>
+      <button class="btn text-white bg-black bg-black-hover">Envoyer</button>
+    {% endform %}
+  </div>
+</div>
